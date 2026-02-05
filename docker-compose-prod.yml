@@ -1,6 +1,6 @@
 services:
   db:
-    image: 'postgres:17'
+    image: postgres:17
     container_name: postgres_theater
     env_file:
       - .env
@@ -130,6 +130,7 @@ services:
     restart: always
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./configs/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./configs/certbot/www:/var/www/certbot:ro
